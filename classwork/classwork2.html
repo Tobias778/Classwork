@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Please input a number between 5 and 10:</p>
+        <input id="demo" type="text" min="5" max="10" step="1">
+        <button type="button" onclick="myFunction()">Test Input</button>
+        <p id="demo1"></p>
+        <script>
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var d = new Date();
+            var d1 = new Date(1667590000000);
+            var d2 = new Date("2023/03/17");
+            var d3 = new Date(2000, 12, 31, 25, 59, 0, 0);
+            var d4 = new Date("October 13, 2014 11:13:00");
+            var d5 = new Date(2023, 2, 17);
+            var msec = d5.getTime();
+            document.getElementById("demo1").innerHTML =
+            d + "<br>" + d1 + "<br>" + d2 + "<br>" + d3 + "<br>" + d4.toDateString() +
+            "<br>" + d5.toUTCString() + "<br>" + 
+            days[d5.getDay()]+ "<br>" + msec + "<br>" + new Date(msec);
+        </script>
+    </body>
+</html>

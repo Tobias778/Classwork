@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Please input a number between 5 and 10:</p>
+        <input id="demo" type="text" min="5" max="10" step="1">
+        <button type="button" onclick="myFunction()">Test Input</button>
+        <p id="message"></p>
+        <script>
+            function myFunction() 
+            {
+                var message, x;
+                message = document.getElementById("message");
+                message.innerHTML = "";
+                x = document.getElementById("demo").value;
+                var txt;
+                try { 
+                    if(x == "") throw "empty";
+                    if(isNaN(x)) throw "not a number";
+                    x == Number(x);
+                    if(x < 5) throw "too low";
+                    if(x >= 10) throw "too high";
+                }
+                catch(err) {
+                    txt = "there was an error on this page.\n\n";
+                    txt += "Click OK to continue on this page.\n\n";
+                    txt += "or Cancel to return to the W3Schools web site.\n\n";
+                    if(confirm(txt) == false){
+                        document.location.href = "https://w3schools.com/";
+                    }
+                    message.innerHTML = "Input is " + err;
+                }
+                finally {
+                    alert("in finally block");
+                }
+            }
+        </script>
+    </body>
+</html>
